@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: wtfltb9mp-nodejs-gitops
+  description: This is GitOps manifest for wtfltb9mp-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=wtfltb9mp-nodejs
+    backstage.io/kubernetes-id: wtfltb9mp-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: wtfltb9mp-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:wtfltb9mp-nodejs
